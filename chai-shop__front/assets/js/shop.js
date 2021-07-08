@@ -1,6 +1,6 @@
 //shopping cart like hamburger
 const shoppingCartIcon = document.querySelector('.shopping-cart__icon');
-console.log(shoppingCartIcon);
+
 shoppingCartIcon.addEventListener('click', () => {
     let shoppingCartContent = document.querySelector('.main__aside');
     shoppingCartContent.classList.toggle('active');
@@ -8,11 +8,16 @@ shoppingCartIcon.addEventListener('click', () => {
 
 
 // add buttons
-const addToShoppingCartButtons = document.querySelectorAll('.add-to-cart');
-addToShoppingCartButtons.forEach(el => {
-    el.addEventListener('click', addToCartClicked);
+document.addEventListener('click', event => {
+    if (event.target && event.target.className.includes('add-to-cart')) {
+        addToCartClicked(event);
+    }
+})
+// const addToShoppingCartButtons = document.querySelectorAll('.add-to-cart');
+// addToShoppingCartButtons.forEach(el => {
+//     el.addEventListener('click', addToCartClicked);
 
-});
+// });
 
 
 // button but

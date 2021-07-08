@@ -163,9 +163,61 @@
 .main__aside{
     flex: 1;
     background-color: var(--thirdy-color);
+    border-radius: 20px 0 0 20px ;
 
     margin-top: 2rem;
 }
+
+.aside__container{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping__item{
+    margin: .1rem 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--primary-color);
+    border-radius: 20px
+}
+.shopping-item__cotainer{
+    align-items:center;
+    text-align: center;
+    
+    width: 50%;
+    height: 50%;
+    padding: 2rem;
+}
+.shopping-item__image{
+    border-radius: 20px;
+    width: 20%;
+}
+
+.shopping-item__title{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.shopping-item__details{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center
+}
+.shopping-item__price{
+    font-size: 1.2rem;
+}
+.shopping-item__button{
+    border-radius: 20px;
+    padding: 1%;
+}
+
+
 /* end ASIDE */
 
 /* end MAIN */

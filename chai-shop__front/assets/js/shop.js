@@ -1,3 +1,12 @@
+//shopping cart like hamburger
+const shoppingCartIcon = document.querySelector('.shopping-cart__icon');
+console.log(shoppingCartIcon);
+shoppingCartIcon.addEventListener('click', () => {
+    let shoppingCartContent = document.querySelector('.main__aside');
+    shoppingCartContent.classList.toggle('active');
+})
+
+
 // add buttons
 const addToShoppingCartButtons = document.querySelectorAll('.add-to-cart');
 addToShoppingCartButtons.forEach(el => {
@@ -101,6 +110,7 @@ function updateShoppingCartTotal() {
 function removeShoppingCartItem(e) {
     const buttonClicked = e.target;
     buttonClicked.closest('.shopping__row').remove();
+    updateShoppingCartTotal();
 };
 
 //update in change input

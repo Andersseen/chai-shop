@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1er2fd4g-898f-8ksd-537hdb6vgfhc",
+        "title": "Chai Negro",
+        "price": 6.99,
+        "image": "img-1.png"
+    },
+    {
+        "id": "1er2fd4g-0pu3-8ksd-537hdb6vgfhc",
+        "title": "Chai Rojo",
+        "price": 5.99,
+        "image": "img-2.png"
+    },
+    {
+        "id": "1er2fd4g-uy76-8ksd-537hdb6vgfhc",
+        "title": "Chai Verde",
+        "price": 4.99,
+        "image": "img-3.png"
+    },
+    {
+        "id": "1ersdd4g-898f-8ksd-537hdb6vgfhc",
+        "title": "Chai Aroma",
+        "price": 9.99,
+        "image": "img-4.png"
+    }
+]

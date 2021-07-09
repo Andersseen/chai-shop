@@ -1,4 +1,5 @@
 const express = require('express');
+const getItemById = require('../data/getItemById');
 const router = express.Router();
 
 //models
@@ -8,12 +9,23 @@ const Item = require('../models/Item');
 router.get('/', async (req, res) => {
     try {
         const itemsFromDB = await Item.find();
-        console.log(itemsFromDB);
         res.json(itemsFromDB);
     } catch (err) {
         res.json({ message: err.message })
     }
 });
+
+//get item
+router.get('/item', async (req, res) => {
+    const itemId = req.body.itemId
+    try {
+        const itemFromDB = await getItemById(itemId);
+        res.json(itemFromDB);
+    } catch (err) {
+        res.json({ message: err.message })
+    }
+});
+
 
 //create item
 

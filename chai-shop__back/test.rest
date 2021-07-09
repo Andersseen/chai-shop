@@ -1,9 +1,16 @@
 ###
 GET http://localhost:3000/
 
-
 ###
 GET http://localhost:3000/items
+
+###
+GET http://localhost:3000/items/item
+Content-Type: application/json
+
+{
+    "itemId":"60e83f9683c7462e7c831da6"
+}
 
 ###
 GET http://localhost:3000/img/tea-black.png
@@ -17,3 +24,14 @@ Content-Type: application/json
     "price": 6.99,
     "image": "tea-black.png"
 }
+
+###
+POST http://localhost:3000/create-payment-intent
+Content-Type: application/json
+
+[
+    {
+        "id": "60e83f9683c7462e7c831da6",
+        "qty": 2
+    }
+]

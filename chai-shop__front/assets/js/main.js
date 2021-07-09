@@ -26,7 +26,7 @@ function printData(data) {
 function createDomElement(item) {
     const itemHtml = `
         <div class="section__item item">
-            <div class="item__cotainer">
+            <div class="item__container" data-id=${item._id} >
                 <h3 class="item__title">${item.title}</h3>
                 <img class="item__image" src=${serverUrl}${imagesPath}${item.image}>
 

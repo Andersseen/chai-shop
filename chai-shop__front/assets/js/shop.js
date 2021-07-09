@@ -35,13 +35,14 @@ function addToCartClicked(e) {
     const itemTitle = item.querySelector('.item__title').textContent;
     const itemPrice = item.querySelector('.item__price').textContent;
     const itemImage = item.querySelector('.item__image').src;
+    const itemId = item.childNodes[1].dataset.id;
 
-    addItemToShoppingCart(itemTitle, itemPrice, itemImage);
+    addItemToShoppingCart(itemTitle, itemPrice, itemImage, itemId);
 };
 
 
 // funcion for added items in shopping cart
-function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
+function addItemToShoppingCart(itemTitle, itemPrice, itemImage, itemId) {
     const elementsTitle = shoppingCartItemsContainer.querySelectorAll('.shopping-item__title');
 
     for (let i = 0; i < elementsTitle.length; i++) {
@@ -56,7 +57,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     const shoppingCartRow = document.createElement('div');
     shoppingCartRow.classList.add('shopping__row');
     const shoppingCartContent = `
-                    <div class="shopping__item">
+                    <div class="shopping__item" data-id=${itemId}>
                         <h3 class="shopping-item__title">${itemTitle}</h3>
 
 
@@ -127,6 +128,22 @@ function quantityChanged(event) {
 
 //buy items
 function comprarButtonClicked() {
+    const popup = document.querySelector('#popup');
+    popup.classList.add('open');
+    const page = document.querySelector('#page');
+    page.classList.add('block');
+
     shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
 }
+
+
+//close popup
+const btnClosePopup = document.querySelector('.popup__close');
+btnClosePopup.addEventListener('click', () => {
+    const popup = document.querySelector('#popup');
+    popup.classList.remove('open');
+
+    const page = document.querySelector('#page');
+    page.classList.remove('block');
+});

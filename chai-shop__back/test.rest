@@ -35,3 +35,17 @@ Content-Type: application/json
         "qty": 2
     }
 ]
+
+###
+POST http://localhost:3000/order
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "items":[
+        {
+            "id": "60e83f9683c7462e7c831da6",
+            "qty": 2
+        }
+    ]
+}

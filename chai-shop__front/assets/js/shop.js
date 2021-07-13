@@ -35,7 +35,7 @@ function addToCartClicked(e) {
     const itemTitle = item.querySelector('.item__title').textContent;
     const itemPrice = item.querySelector('.item__price').textContent;
     const itemImage = item.querySelector('.item__image').src;
-    const itemId = item.childNodes[1].dataset.id;
+    const itemId = item.querySelector('.item__container').dataset.id;
 
     addItemToShoppingCart(itemTitle, itemPrice, itemImage, itemId);
 };
@@ -128,18 +128,22 @@ function quantityChanged(event) {
 
 //buy items
 function comprarButtonClicked() {
+
+    const shoppingCartItems = getItemsInShoppingCart();
+    addToLocalStorage('shoppingCart', shoppingCartItems)
+
     const popup = document.querySelector('#popup');
     popup.classList.add('open');
     const page = document.querySelector('#page');
     page.classList.add('block');
 
-    shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
 }
 
-
 //close popup
 const btnClosePopup = document.querySelector('.popup__close');
+
+
 btnClosePopup.addEventListener('click', () => {
     const popup = document.querySelector('#popup');
     popup.classList.remove('open');
@@ -147,3 +151,36 @@ btnClosePopup.addEventListener('click', () => {
     const page = document.querySelector('#page');
     page.classList.remove('block');
 });
+
+
+function getItemsInShoppingCart() {
+    const shoppingCartItems = document.querySelectorAll('.shopping__row');
+
+
+    const arrShoppingCartItems = [];
+
+    shoppingCartItems.forEach(shoppingCartItem => {
+        const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.item__quantity');
+
+        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
+        const itemId = shoppingCartItem.querySelector('.shopping__item').dataset.id;
+
+        const item = {
+            id: itemId,
+            qty: shoppingCartItemQuantity,
+        }
+        arrShoppingCartItems.push(item);
+
+    });
+    return arrShoppingCartItems;
+};
+
+window.onscroll = () => {
+    getItemsInShoppingCart()
+}
+
+
+
+function addToLocalStorage(key, items) {
+    localStorage.setItem(key, JSON.stringify(items));
+};

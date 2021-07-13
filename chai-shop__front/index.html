@@ -14,6 +14,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script defer src="./assets/js/shop.js"></script>
     <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/payment.js"></script>
 
 
     <title>Chai</title>
@@ -81,14 +82,21 @@
                     <h3 class="popup__close">X</h3>
                 </div>
                 <form id="payment-form">
-                    <div id="card-element">
-                        <!-- Elements will create input elements here -->
+                    <div id="user-email">
+                        <input type="email" name="email" id="email" class="form__control">
                     </div>
-
-                    <!-- We'll put the error messages in this element -->
-                    <div id="card-errors" role="alert"></div>
-
-                    <button id="submit">Submit Payment</button>
+                    <div id="card-element">
+                        <!--Stripe.js injects the Card Element-->
+                    </div>
+                    <button id="submit">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <span id="button-text">Pagar</span>
+                    </button>
+                    <p id="card-error" role="alert"></p>
+                    <p class="result-message hidden">
+                        Payment succeeded, see the result in your
+                        <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+                    </p>
                 </form>
             </div>
 

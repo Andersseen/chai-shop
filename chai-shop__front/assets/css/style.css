@@ -341,10 +341,31 @@
 }
 
 /* POPUP FORM */
+
+.form__control{
+    padding: .5rem 3rem;
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+    background-color: rgb(250 250 250 / 50%);
+}
+
+#card-element{
+    padding: .5rem 3rem;
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+    background-color: rgb(250 250 250 / 50%);
+}
+
+
 #submit{
     border: 0;
     border-radius: 10px;
     padding: 2%;
+}
+.hidden{
+    display: none!important;
 }
 
 

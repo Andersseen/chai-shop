@@ -15,7 +15,6 @@ export class ItemsService {
   constructor(private http: HttpClient) { }
 
   getItems() {
-
     return this.http.get<Item[]>(this.serverUrl + this.itemsPath);
   }
 }

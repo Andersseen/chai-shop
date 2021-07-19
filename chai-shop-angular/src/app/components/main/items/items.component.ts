@@ -11,8 +11,6 @@ export class ItemsComponent implements OnInit {
 
   constructor(public itemsService: ItemsService) { }
 
-  serverUrlImagesPath: string = 'http://localhost:3000/img/';
-
   ngOnInit(): void {
     this.getItems();
   }

@@ -1,11 +1,17 @@
-<div class="container-fluid bg-dark">
-    <ul class="list-group" id="sidebar">
-        <li class="list-group-item list-group-item-dark d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto">
-                <div class="fw-bold">Title</div>
-                <div>precio</div>
-            </div>
-            <span class="badge bg-primary rounded-pill">1</span>
+<div class="container-fluid bg-primary text-dark p-3" id="sidebar">
+
+    <ul *ngIf="cartItems.length; else notShow" class="list-group">
+        <li *ngFor="let item of cartItems"
+            class="list-group-item list-group-item-dark d-flex justify-content-between align-items-start">
+            <app-cart-item [cartItem]="item"></app-cart-item>
+        </li>
+        <li class="list-group-item list-group-item-dark d-flex justify-content-evenly align-items-center">
+            <h2>Total</h2>
+            <h4>{{cartTotal | currency:'EUR'}}</h4>
+
         </li>
     </ul>
+    <ng-template #notShow>
+        Cart is empty
+    </ng-template>
 </div>

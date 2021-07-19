@@ -7,7 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ItemsComponent } from './components/main/items/items.component';
+import { ProductItemComponent } from './components/main/items/product-item/product-item.component';
 import { SidebarComponent } from './components/main/sidebar/sidebar.component';
+import { CartItemComponent } from './components/main/sidebar/cart-item/cart-item.component';
+
 
 
 @NgModule({
@@ -18,6 +21,8 @@ import { SidebarComponent } from './components/main/sidebar/sidebar.component';
     FooterComponent,
     ItemsComponent,
     SidebarComponent,
+    ProductItemComponent,
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,

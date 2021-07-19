@@ -1,56 +1,11 @@
-<div class="container">
-
-    <div class="row my-2">
-        <div class="col">
-            <div class="card bg-dark shadow" style="width: 18rem;">
-                <img src="../../../../assets/img/tea-black.png" class="card-img-top" alt="tea-aroma">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                </div>
-            </div>
+<div class="d-flex flex-wrap">
+    <div *ngFor="let item of itemsService.items" class="m-2 card bg-dark shadow" style="width: 18rem;"
+        data-id="{{item._id}}">
+        <img src="{{serverUrlImagesPath}}{{item.image}}" class="card-img-top" alt="{{item.title}}">
+        <div class="card-body">
+            <h5 class="card-title">{{item.title}}</h5>
+            <p class="card-text">{{item.price}}</p>
+            <a href="#" class="btn btn-primary">Comprar</a>
         </div>
-        <div class="col">
-            <div class="card bg-dark shadow" style="width: 18rem;">
-                <img src="../../../../assets/img/tea-green.png" class="card-img-top" alt="tea-aroma">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row my-2">
-        <div class="col">
-            <div class="card bg-dark shadow" style="width: 18rem;">
-                <img src="../../../../assets/img/tea-red.png" class="card-img-top" alt="tea-aroma">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card bg-dark shadow" style="width: 18rem;">
-                <img src="../../../../assets/img/tea-aroma.png" class="card-img-top" alt="tea-aroma">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
-                    <a href="#" class="btn btn-primary">Buy</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>

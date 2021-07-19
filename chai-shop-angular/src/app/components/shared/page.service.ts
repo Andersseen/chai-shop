@@ -4,11 +4,8 @@ import { Injectable } from "@angular/core";
 export class PageService {
 
     toggleMenu() {
-        let x = document.querySelector('#sidebar');
-        x?.classList.toggle('open');
-        console.log(x);
-
-
+        let sidebar = document.querySelector('#sidebar');
+        sidebar?.classList.toggle('open');
     }
 
 }

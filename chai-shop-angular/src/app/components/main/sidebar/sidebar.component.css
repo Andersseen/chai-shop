@@ -1,0 +1,12 @@
+#sidebar{
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+
+    transition: all 1s ease;
+}
+#sidebar.open{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}

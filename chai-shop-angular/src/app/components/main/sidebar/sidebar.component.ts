@@ -32,16 +32,15 @@ export class SidebarComponent implements OnInit {
         break
       }
     }
-
     if (!itemExist) {
       this.cartItems.push({
         id: item._id,
         itemTitle: item.title,
+        imageUrl: item.image,
         qty: 1,
         price: item.price,
       })
     }
-
     this.cartTotal = 0
     this.cartItems.forEach(item => {
       this.cartTotal += (item.qty * item.price)

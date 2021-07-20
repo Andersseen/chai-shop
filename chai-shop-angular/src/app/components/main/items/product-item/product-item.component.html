@@ -2,7 +2,7 @@
     <img src="{{serverUrlImagesPath}}{{productItem.image}}" class="card-img-top" alt="{{productItem.title}}">
     <div class="card-body">
         <h5 class="card-title">{{productItem.title}}</h5>
-        <p class="card-text">{{productItem.price}}</p>
+        <p class="card-text">{{productItem.price| currency:'EUR'}}</p>
         <button (click)="handleAddToCart()" type="button" class="btn btn-primary product-btn">
             Comprar
         </button>

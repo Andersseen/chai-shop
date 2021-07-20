@@ -1,5 +1,13 @@
-<div class="cart">
-    <div>name:{{cartItem.itemTitle}}</div>
-    <div>qty:{{cartItem.qty}}</div>
-    <div>price:{{cartItem.price}}</div>
+<div class="container cart">
+    <div class="row">
+        <div class="col align-self-center">
+            <h6>{{cartItem.itemTitle}}</h6>
+            <span>{{cartItem.qty}} X </span>
+            <span>{{cartItem.price| currency:'EUR'}}</span>
+        </div>
+        <div class="col">
+            <img src="{{serverUrlImagesPath}}{{cartItem.imageUrl}}" class="img-fluid rounded-start">
+        </div>
+    </div>
+
 </div>

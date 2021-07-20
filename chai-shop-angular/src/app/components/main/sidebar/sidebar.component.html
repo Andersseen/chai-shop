@@ -1,8 +1,8 @@
-<div class="container-fluid bg-primary text-dark p-3" id="sidebar">
+<div class="container-fluid bg-primary text-light p-1" id="sidebar">
 
-    <ul *ngIf="cartItems.length; else notShow" class="list-group">
+    <ul *ngIf="cartItems.length" class="list-group">
         <li *ngFor="let item of cartItems"
-            class="list-group-item list-group-item-dark d-flex justify-content-between align-items-start">
+            class="list-group-item list-group-item-dark d-flex justify-content-between align-items-center">
             <app-cart-item [cartItem]="item"></app-cart-item>
         </li>
         <li class="list-group-item list-group-item-dark d-flex justify-content-evenly align-items-center">
@@ -11,7 +11,10 @@
 
         </li>
     </ul>
-    <ng-template #notShow>
-        Cart is empty
-    </ng-template>
+    <ul *ngIf="!cartItems.length" class="list-group">
+        <li class="list-group-item list-group-item-dark d-flex justify-content-center align-items-center">
+            <h6>Cart is empty</h6>
+        </li>
+
+    </ul>
 </div>

@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CartItemComponent implements OnInit {
 
+  serverUrlImagesPath: string = 'http://localhost:3000/img/';
+
   @Input() cartItem: any
 
   constructor() { }

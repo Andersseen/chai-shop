@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MessengerService } from 'src/app/services/messenger.service'
+import { Item } from './../../../models/item';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -7,29 +10,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  cartItems = [
-    {
-      id: 1,
-      itemTitle: 'Title',
-      qty: 2,
-      price: 10
-    },
-    {
-      id: 2,
-      itemTitle: 'Title second',
-      qty: 1,
-      price: 15
-    }
-  ];
+  cartItems: Array<any> = [];
 
   cartTotal = 0
 
-  constructor() { }
+  constructor(private msg: MessengerService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.msg.getMsg().subscribe((item: any) => {
+      this.addItemToCart(item)
+    })
+  }
+
+
+  addItemToCart(item: Item) {
+    let itemExist = false
+    for (let i in this.cartItems) {
+      if (this.cartItems[i].id == item._id) {
+        this.cartItems[i].qty++
+        itemExist = true
+        break
+      }
+    }
+
+    if (!itemExist) {
+      this.cartItems.push({
+        id: item._id,
+        itemTitle: item.title,
+        qty: 1,
+        price: item.price,
+      })
+    }
+
+    this.cartTotal = 0
     this.cartItems.forEach(item => {
       this.cartTotal += (item.qty * item.price)
     })
   }
-
 }

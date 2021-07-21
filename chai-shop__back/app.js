@@ -20,6 +20,8 @@ const imgRoutes = require('./routes/img');
 const paymentsIntentRoutes = require('./routes/paymentsIntent');
 const ordersRoutes = require("./routes/orders");
 
+const cartRoutes = require('./routes/cart');
+
 //middelware
 app.use(cors());
 app.use(express.json());
@@ -28,6 +30,8 @@ app.use('/items', itemsRoutes);
 app.use('/img', imgRoutes);
 app.use('/create-payment-intent', paymentsIntentRoutes);
 app.use('/order', ordersRoutes);
+
+app.use('/cart', cartRoutes);
 
 //rutas
 app.get('/', (req, res) => {

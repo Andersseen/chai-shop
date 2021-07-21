@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Item } from '../models/item'
+
+import { itemsUrl } from 'src/app/config/api';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ItemsService {
-
-  serverUrl: string = 'http://localhost:3000/';
-  itemsPath: string = 'items/';
-
 
   items: Item[] = [];
 
@@ -16,6 +15,6 @@ export class ItemsService {
 
   getItems() {
 
-    return this.http.get<Item[]>(this.serverUrl + this.itemsPath);
+    return this.http.get<Item[]>(itemsUrl);
   }
 }

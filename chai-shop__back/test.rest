@@ -49,3 +49,10 @@ Content-Type: application/json
         }
     ]
 }
+
+
+###
+GET http://localhost:3000/cart
+
+###
+POST http://localhost:3000/cart

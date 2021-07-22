@@ -27,7 +27,7 @@ export class SidebarComponent implements OnInit {
   }
 
   handleSubscription() {
-    this.msg.getMsg().subscribe((item) => {
+    this.msg.getMsg().subscribe(() => {
       this.loadCartItems()
     })
   }

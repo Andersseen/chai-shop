@@ -1,4 +1,4 @@
-import { cartUrl } from 'src/app/config/api';
+import { cartUrl, cartItemUrl } from 'src/app/config/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CartItem } from '../models/cart-item';
@@ -11,6 +11,8 @@ import { map } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class CartService {
+
+  items: Item[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -44,4 +46,14 @@ export class CartService {
   addItemToCart(item: Item): Observable<any> {
     return this.http.post(cartUrl, { item })
   }
+
+  deleteItemFromCart(item: Item): Observable<any> {
+    return this.http.post(cartItemUrl, { item })
+  }
+
+  getItemsFromCart() {
+    return this.http.get<Item[]>(cartUrl);
+  }
+
+
 }

@@ -1,4 +1,5 @@
 <div class="container cart">
+    <button (click)="deleteOnClick($event)" class="btn btn-warning float-end">X</button>
     <div class="row">
         <div class="col align-self-center">
             <h6>{{cartItem.title}}</h6>
@@ -8,6 +9,6 @@
         <div class="col">
             <img src="{{serverUrlImagesPath}}{{cartItem.image}}" class="img-fluid rounded-start">
         </div>
-    </div>
 
+    </div>
 </div>

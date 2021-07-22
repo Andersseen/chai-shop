@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const getItemByIdFromCart = require('../data/getItemById');
+
 //models
 const ItemsInCart = require('../models/ItemsInCart');
 
@@ -29,6 +31,18 @@ router.post('/', async (req, res) => {
         res.json(newItem);
     } catch (err) {
         res.json({ message: err.message });
+    }
+});
+
+//delete item in cart
+
+router.post('/item', async (req, res) => {
+    const itemId = req.body.item._id
+    try {
+        const itemFromCart = await getItemByIdFromCart(itemId);
+        itemFromCart.delete()
+    } catch (err) {
+        res.json({ message: err.message })
     }
 });
 

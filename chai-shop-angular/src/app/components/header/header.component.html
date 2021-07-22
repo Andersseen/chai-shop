@@ -1,9 +1,9 @@
 <div class="container-fluid mb-auto d-flex justify-content-between shadow-sm align-items-center" id="header">
     <h3 class="float-md-start mb-0">Logo</h3>
     <nav class="nav nav-masthead  float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/shop']">Home</a>
+        <a class="btn btn-outline-primary" [routerLink]="['/register']">Sing Up</a>
+        <a class="mx-2 btn btn-outline-secondary" [routerLink]="['/login']">Login</a>
 
     </nav>
     <button (click)="onClick()" class="btn btn-outline-light">
